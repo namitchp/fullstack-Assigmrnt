@@ -237,7 +237,7 @@ function sendEmail(mailto, subject, otp,type) {
   });
 }
 const sendWhatsapp = async (mobile, otp) => {
-  // var msg = `Your verification OTP code is ${otp} (valid for 10 minutes) Please do not share OTP with anyone.(Generated at ${moment().format('lll')}`;
+  var msg = `Your verification OTP code is ${otp} (valid for 10 minutes) Please do not share OTP with anyone.(Generated at ${moment().format('lll')}`;
   token = process.env.TOKEN || 2334;
   await axios
     .get(
@@ -246,11 +246,11 @@ const sendWhatsapp = async (mobile, otp) => {
         "&phone=91" +
         mobile +
         "&message=" +
-        "cgh" +
+        msg +
         ""
     )
     .then((response) => {
-      // console.log(response.data.status)
+      console.log(response.data.status)
     });
 };
 
