@@ -90,7 +90,7 @@ userRoute.post("/login", async (req, res, next) => {
           });
         } else {
           res.json({
-            message: "Invalid UserName Or Password",
+            message: "Invalid mobile no or mobile no is not exist",
             valid: false,
           });
         }
